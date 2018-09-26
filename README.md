@@ -1,9 +1,8 @@
-# django-drf-react-quickstart
-Django REST framework / React quickstart
+# Facial recognition
+Facial Recognition
 
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat)](LICENSE)
 
-![Django REST framework React](https://www.valentinog.com/blog/wp-content/uploads/2018/01/django-rest-framework-react.png)
 
 ## Development
 
@@ -28,12 +27,15 @@ Django REST framework / React quickstart
 
 ## TODO
 
-* Authentication
-* React routing
-* Production
+* Setting with mongo db
+* Setting graphql
+* Connect with camera, video streaming, display
+* Create admin screen
+* Manage students
 
 ## Meta
 
-Valentino Gagliardi - [valentinog.com](https://www.valentinog.com) - valentino@valentinog.com
+Phung Huu Thang - thang@fang.com
+Toan Mai Xuan - toanmx.01@gmail.com
 
 
