@@ -11,6 +11,7 @@ pylint = "*"
 django = "*"
 djangorestframework = "*"
 pylint-django = "*"
+djongo = "*"
 
 [requires]
 python_version = "3.6"
