@@ -2,13 +2,19 @@ import * as React from 'react';
 import DataProvider from "./components/DataProvider";
 import Table from "./components/Table";
 import Form from "./components/Form";
+import Navbar from './components/Navbar';
 
 class Dashboard extends React.Component {
   render() {
     return(
       <React.Fragment>
-        <DataProvider endpoint="api/lead/" render={data => <Table data={data} />} />
-        <Form endpoint="api/lead/" />
+        <Navbar></Navbar>
+        <section class="section">
+          <div class="container">
+            <DataProvider endpoint="api/lead/" render={data => <Table data={data} />} />
+            <Form endpoint="api/lead/" />
+          </div>
+        </section>
       </React.Fragment>
     )
   }

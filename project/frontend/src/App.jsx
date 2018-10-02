@@ -1,6 +1,7 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom";
-import Dashboard from './Dashboard'
+import Dashboard from './Dashboard';
+import './styles/index.scss';
 
 const App = () => (<Dashboard></Dashboard>
   );

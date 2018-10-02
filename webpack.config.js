@@ -1,7 +1,7 @@
 var path = require("path");
 var webpack = require('webpack');
 var BundleTracker = require('webpack-bundle-tracker');
-
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
   context: __dirname,
@@ -27,7 +27,21 @@ module.exports = {
         loaders: ['babel-loader']
       },
       { test: /\.css$/, use: 'css-loader' },
-      { test: /\.ts$/, use: 'ts-loader' }
+      { test: /\.ts$/, use: 'ts-loader' },
+      {
+        test: /\.scss$/,
+        use: [
+          {
+            loader: 'style-loader'
+          },
+          {
+            loader: 'css-loader'
+          },
+          {
+            loader: 'sass-loader'
+          }
+        ]
+      }
     ],
   }
 }
