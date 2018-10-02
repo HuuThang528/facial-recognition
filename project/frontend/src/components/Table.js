@@ -6,7 +6,7 @@ const Table = ({ data }) =>
   !data.length ? null : (
     <div className="column">
       <h2 className="subtitle">
-        Showing bbb <strong>{data.length} items</strong>
+        Showing ccc <strong>{data.length} items</strong>
       </h2>
       <table className="table is-striped">
         <thead>
