@@ -1,33 +1,33 @@
+var path = require("path");
+var webpack = require('webpack');
+var BundleTracker = require('webpack-bundle-tracker');
+
+
 module.exports = {
+  context: __dirname,
+  entry: './project/frontend/src',
+  mode: 'development',
+  output: {
+      path: path.resolve('./project/frontend/static/frontend/'),
+      filename: "[name].js",
+  },
+
+  plugins: [
+    new BundleTracker({filename: './webpack-stats.json'}),
+  ],
+  resolve: {
+    extensions: ['.js', '.jsx']
+  },
   module: {
     rules: [
+      // we pass the output from babel loader to react-hot loader
       {
-        test: /\.js$/,
+        test: /\.jsx?$/,
         exclude: /node_modules/,
-        use: {
-          loader: "babel-loader"
-        }
-      }
-    ],
-    loaders: [
-        {
-            test: /\.jsx?$/,
-            loader: 'babel',
-            exclude: /node_modules/,
-            query: {
-                presets: ['react', 'es2015']
-            }
-        },
-        {
-            test: /\.scss$/,
-            loader: 'style!css!sass!sass-resources'
-        },
-        {
-            test: /bootstrap\/dist\/js\/umd\//,
-            loader: 'imports?jQuery=jquery'
-        },
-        { test: /\.(woff2?|svg)$/, loader: 'url?limit=10000' },
-        { test: /\.(ttf|eot)$/, loader: 'file' }
+        loaders: ['babel-loader']
+      },
+      { test: /\.css$/, use: 'css-loader' },
+      { test: /\.ts$/, use: 'ts-loader' }
     ],
   }
-};
+}

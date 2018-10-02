@@ -6,20 +6,20 @@
   "scripts": {
     "flush": "pipenv run python ./project/manage.py flush --no-input",
     "e2e": "cypress open --project ./project/frontend/",
-    "dev": "webpack --mode development ./project/frontend/src/index.js --output ./project/frontend/static/frontend/main.js",
+    "dev": "webpack --config webpack.config.js --watch",
     "build": "webpack --mode production ./project/frontend/src/index.js --output ./project/frontend/static/frontend/main.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/valentinogagliardi/django-drf-react-quickstart.git"
+    "url": "git+https://github.com/HuuThang528/facial-recognition.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/valentinogagliardi/django-drf-react-quickstart/issues"
+    "url": "https://github.com/HuuThang528/facial-recognition/issues"
   },
-  "homepage": "https://github.com/valentinogagliardi/django-drf-react-quickstart#readme",
+  "homepage": "https://github.com/HuuThang528/facial-recognition#readme",
   "devDependencies": {
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
@@ -34,5 +34,10 @@
     "webpack": "^4.12.1",
     "webpack-cli": "^3.0.8"
   },
-  "dependencies": {}
+  "dependencies": {
+    "babel-preset-es2016": "^6.24.1",
+    "css-loader": "^1.0.0",
+    "ts-loader": "^5.2.1",
+    "webpack-bundle-tracker": "^0.3.0"
+  }
 }
