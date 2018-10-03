@@ -12,6 +12,12 @@ django = "*"
 djangorestframework = "*"
 pylint-django = "*"
 djongo = "*"
+pip = "*"
+graphene-django = "*"
+graphene = "*"
 
 [requires]
 python_version = "3.6"
+
+[pipenv]
+allow_prereleases = true
