@@ -1,6 +1,6 @@
 from django.urls import path, include
 from django.views.decorators.csrf import csrf_exempt
-from graphene_django.views import GraphQLView
+from graphene_django.views import GraphQLView # pylint: disable=import-error
 from django.conf.urls import url
 
 urlpatterns = [

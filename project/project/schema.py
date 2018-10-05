@@ -1,8 +1,7 @@
 import leads.schema
-import graphene
+import graphene # pylint: disable=import-error
 
-from graphene_django.debug import DjangoDebug
-
+from graphene_django.debug import DjangoDebug # pylint: disable=import-error
 
 class Query(leads.schema.Queries,
             graphene.ObjectType):

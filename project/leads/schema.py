@@ -1,4 +1,4 @@
-import graphene
+import graphene # pylint: disable=import-error
 
 class Queries(
     graphene.ObjectType
