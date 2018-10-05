@@ -9,8 +9,8 @@ class Dashboard extends React.Component {
     return(
       <React.Fragment>
         <Navbar></Navbar>
-        <section class="section">
-          <div class="container">
+        <section className="section">
+          <div className="container">
             <DataProvider endpoint="api/lead/" render={data => <Table data={data} />} />
             <Form endpoint="api/lead/" />
           </div>
