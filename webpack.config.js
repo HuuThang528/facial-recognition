@@ -2,10 +2,12 @@ var path = require("path");
 var webpack = require('webpack');
 var BundleTracker = require('webpack-bundle-tracker');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-
+var LiveReloadPlugin = require('webpack-livereload-plugin');
 module.exports = {
   context: __dirname,
-  entry: './project/frontend/src',
+  entry: [
+    './project/frontend/src',
+  ],
   mode: 'development',
   output: {
       path: path.resolve('./project/frontend/static/frontend/'),
@@ -13,7 +15,9 @@ module.exports = {
   },
 
   plugins: [
+    new webpack.HotModuleReplacementPlugin(),
     new BundleTracker({filename: './webpack-stats.json'}),
+    new LiveReloadPlugin(),
   ],
   resolve: {
     extensions: ['.js', '.jsx']
