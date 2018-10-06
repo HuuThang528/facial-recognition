@@ -1,7 +1,7 @@
 import graphene # pylint: disable=import-error
-from graphene_django.types import DjangoObjectType
+from graphene_django.types import DjangoObjectType # pylint: disable=import-error
 from . import models
-from graphql_relay.node.node import from_global_id
+from graphql_relay.node.node import from_global_id # pylint: disable=import-error
 import json
 
 class LeadType(DjangoObjectType):

@@ -10,6 +10,8 @@ from rest_framework_jwt.views import verify_jwt_token
 urlpatterns = [
     path('', include('leads.urls')),
     path('', include('frontend.urls')),
+    url(r'^(?:.*)/?$', include('frontend.urls')),
+
     url(r'^graphiql', csrf_exempt(GraphQLView.as_view(graphiql=True))),
     url(r'^gql', csrf_exempt(GraphQLView.as_view(batch=True))),
     url(r'^api-token-auth/', obtain_jwt_token),
