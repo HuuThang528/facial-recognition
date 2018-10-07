@@ -8,6 +8,7 @@ import Table from "../../components/Table/Table";
 import Card from "../../components/Card/Card";
 import CardHeader from "../../components/Card/CardHeader";
 import CardBody from "../../components/Card/CardBody";
+import { css } from "emotion";
 
 const styles = {
   cardCategoryWhite: {
@@ -38,29 +39,38 @@ const styles = {
   }
 };
 
+const addNew = css`
+  float: right;
+  position: absolute;
+  right: 26px;
+  top: 24px;
+  cursor: pointer;
+`
+
 function RoomList(props) {
   const { classes } = props;
   return (
     <GridContainer>
       <GridItem xs={12} sm={12} md={12}>
         <Card>
-          <CardHeader color="primary">
-            <h4 className={classes.cardTitleWhite}>Simple Table</h4>
+          <CardHeader color="warning">
+            <h4 className={classes.cardTitleWhite}>Room Table</h4>
             <p className={classes.cardCategoryWhite}>
-              Here is a subtitle for this table
+              Manage rooms, create, update, change status of room.
             </p>
+            <div className={addNew}>New Room</div>
           </CardHeader>
           <CardBody>
             <Table
-              tableHeaderColor="primary"
-              tableHead={["Name", "Country", "City", "Salary"]}
+              tableHeaderColor="warning"
+              tableHead={["ID", "Name", "Floor", "Cameras", "Status", ""]}
               tableData={[
-                ["Dakota Rice", "Niger", "Oud-Turnhout", "$36,738"],
-                ["Minerva Hooper", "Curaçao", "Sinaai-Waas", "$23,789"],
-                ["Sage Rodriguez", "Netherlands", "Baileux", "$56,142"],
-                ["Philip Chaney", "Korea, South", "Overland Park", "$38,735"],
-                ["Doris Greene", "Malawi", "Feldkirchen in Kärnten", "$63,542"],
-                ["Mason Porter", "Chile", "Gloucester", "$78,615"]
+                ["", "101", "1", "1", "Using"],
+                ["", "102", "1", "1", "Close"],
+                ["", "103", "1", "1", "Close"],
+                ["", "104", "1", "1", "Close"],
+                ["", "105", "1", "1", "Close"],
+                ["", "106", "1", "2", "Using"]
               ]}
             />
           </CardBody>

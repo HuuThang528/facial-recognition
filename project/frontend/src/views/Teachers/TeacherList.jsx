@@ -8,6 +8,7 @@ import Table from "../../components/Table/Table";
 import Card from "../../components/Card/Card";
 import CardHeader from "../../components/Card/CardHeader";
 import CardBody from "../../components/Card/CardBody";
+import { css } from "emotion";
 
 const styles = {
   cardCategoryWhite: {
@@ -38,29 +39,38 @@ const styles = {
   }
 };
 
+const addNew = css`
+  float: right;
+  position: absolute;
+  right: 26px;
+  top: 24px;
+  cursor: pointer;
+`
+
 function TeacherList(props) {
   const { classes } = props;
   return (
     <GridContainer>
       <GridItem xs={12} sm={12} md={12}>
         <Card>
-          <CardHeader color="primary">
-            <h4 className={classes.cardTitleWhite}>Simple Table</h4>
+          <CardHeader color="warning">
+            <h4 className={classes.cardTitleWhite}>Teacher Table</h4>
             <p className={classes.cardCategoryWhite}>
-              Here is a subtitle for this table
+              Manage teacher information, create, update information of teacher
             </p>
+            <div className={addNew}>New Teacher</div>
           </CardHeader>
           <CardBody>
             <Table
-              tableHeaderColor="primary"
-              tableHead={["Name", "Country", "City", "Salary"]}
+              tableHeaderColor="warning"
+              tableHead={["Name", "Major", "Status", "Update Image", ""]}
               tableData={[
-                ["Dakota Rice", "Niger", "Oud-Turnhout", "$36,738"],
-                ["Minerva Hooper", "Curaçao", "Sinaai-Waas", "$23,789"],
-                ["Sage Rodriguez", "Netherlands", "Baileux", "$56,142"],
-                ["Philip Chaney", "Korea, South", "Overland Park", "$38,735"],
-                ["Doris Greene", "Malawi", "Feldkirchen in Kärnten", "$63,542"],
-                ["Mason Porter", "Chile", "Gloucester", "$78,615"]
+                ["Dakota Rice", "Phisic", "Teaching", "Yes"],
+                ["Minerva Hooper", "Curaçao", "", "Yes"],
+                ["Sage Rodriguez", "Netherlands", "Baileux", "Yes"],
+                ["Philip Chaney", "Korea, South", "Overland Park", "Yes"],
+                ["Doris Greene", "Malawi", "Feldkirchen in Kärnten", "Yes"],
+                ["Mason Porter", "Chile", "Gloucester", "No"]
               ]}
             />
           </CardBody>

@@ -13,6 +13,7 @@ import StudentList from "../views/Students/StudentList";
 import NewStudent from "../views/Students/NewStudent.jsx"
 import RoomList from "../views/Rooms/RoomList";
 import SubjectList from "../views/Subjects/SubjectList";
+import TeacherList from "../views/Teachers/TeacherList";
 import CameraList from "../views/Cameras/CameraList";
 
 const dashboardRoutes = [
@@ -54,7 +55,7 @@ const dashboardRoutes = [
     navbarName: "Teachers",
     icon: FolderShared,
     sidebarLink: true,
-    component: SubjectList
+    component: TeacherList
   },
   {
     path: "/cameras",
@@ -63,14 +64,6 @@ const dashboardRoutes = [
     icon: CameraIcon,
     sidebarLink: true,
     component: CameraList
-  },
-  {
-    path: "/students/new",
-    sidebarName: "New Student",
-    navbarName: "New Student",
-    icon: Person,
-    sidebarLink: false,
-    component: NewStudent
   },
   { redirect: true, path: "/", to: "/dashboard", navbarName: "Redirect" }
 ];

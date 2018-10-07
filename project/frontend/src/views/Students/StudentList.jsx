@@ -8,7 +8,10 @@ import Table from "../../components/Table/Table";
 import Card from "../../components/Card/Card";
 import CardHeader from "../../components/Card/CardHeader";
 import CardBody from "../../components/Card/CardBody";
-
+import { css } from "emotion";
+import { Link } from 'react-router-dom'
+import { Route } from "react-router-dom";
+import NewStudent from "./NewStudent";
 const styles = {
   cardCategoryWhite: {
     "&,& a,& a:hover,& a:focus": {
@@ -37,30 +40,37 @@ const styles = {
     }
   }
 };
-
+const addNew = css`
+  float: right;
+  position: absolute;
+  right: 26px;
+  top: 24px;
+  cursor: pointer;
+  color: white;
+`
 function StudentList(props) {
   const { classes } = props;
   return (
     <GridContainer>
       <GridItem xs={12} sm={12} md={12}>
         <Card>
-          <CardHeader color="primary">
-            <h4 className={classes.cardTitleWhite}>Simple Table</h4>
+          <CardHeader color="warning">
+            <h4 className={classes.cardTitleWhite}>Student List</h4>
             <p className={classes.cardCategoryWhite}>
-              Here is a subtitle for this table
+              Manage student, create, update information of student
             </p>
+            <Link to="/students/new" className={addNew}>New Student</Link>
           </CardHeader>
           <CardBody>
             <Table
-              tableHeaderColor="primary"
-              tableHead={["Name", "Country", "City", "Salary"]}
+              tableHeaderColor="warning"
+              tableHead={["ID", "Name", "Country", "City", "Salary", ""]}
               tableData={[
-                ["Dakota Rice", "Niger", "Oud-Turnhout", "$36,738"],
-                ["Minerva Hooper", "Curaçao", "Sinaai-Waas", "$23,789"],
-                ["Sage Rodriguez", "Netherlands", "Baileux", "$56,142"],
-                ["Philip Chaney", "Korea, South", "Overland Park", "$38,735"],
-                ["Doris Greene", "Malawi", "Feldkirchen in Kärnten", "$63,542"],
-                ["Mason Porter", "Chile", "Gloucester", "$78,615"]
+                ["", "Dakota Rice", "Niger", "Oud-Turnhout", "$36,738"],
+                ["", "Minerva Hooper", "Curaçao", "Sinaai-Waas", "$23,789"],
+                ["", "Sage Rodriguez", "Netherlands", "Baileux", "$56,142"],
+                ["", "Philip Chaney", "Korea, South", "Overland Park", "$38,735"],
+                ["", "Doris Greene", "Malawi", "Feldkirchen in Kärnten", "$63,542"],
               ]}
             />
           </CardBody>

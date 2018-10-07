@@ -8,6 +8,7 @@ import Table from "../../components/Table/Table";
 import Card from "../../components/Card/Card";
 import CardHeader from "../../components/Card/CardHeader";
 import CardBody from "../../components/Card/CardBody";
+import { css } from "emotion";
 
 const styles = {
   cardCategoryWhite: {
@@ -38,22 +39,31 @@ const styles = {
   }
 };
 
+const addNew = css`
+  float: right;
+  position: absolute;
+  right: 26px;
+  top: 24px;
+  cursor: pointer;
+`
+
 function SubjectList(props) {
   const { classes } = props;
   return (
     <GridContainer>
       <GridItem xs={12} sm={12} md={12}>
         <Card>
-          <CardHeader color="primary">
-            <h4 className={classes.cardTitleWhite}>Simple Table</h4>
+          <CardHeader color="warning">
+            <h4 className={classes.cardTitleWhite}>Subject Table</h4>
             <p className={classes.cardCategoryWhite}>
-              Here is a subtitle for this table
+              This table display all subject.
             </p>
+            <div className={addNew}>New Subject</div>
           </CardHeader>
           <CardBody>
             <Table
-              tableHeaderColor="primary"
-              tableHead={["Name", "Country", "City", "Salary"]}
+              tableHeaderColor="warning"
+              tableHead={["Name", "Country", "City", "Salary", ""]}
               tableData={[
                 ["Dakota Rice", "Niger", "Oud-Turnhout", "$36,738"],
                 ["Minerva Hooper", "Curaçao", "Sinaai-Waas", "$23,789"],

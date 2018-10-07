@@ -7,6 +7,9 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import TableBody from "@material-ui/core/TableBody";
 import TableCell from "@material-ui/core/TableCell";
+import IconButton from "@material-ui/core/IconButton";
+import Edit from "@material-ui/icons/Edit";
+
 // core components
 import tableStyle from "../../assets/jss/material-dashboard-react/components/tableStyle.jsx";
 
@@ -40,8 +43,21 @@ function CustomTable({ ...props }) {
                     <TableCell className={classes.tableCell} key={key}>
                       {prop}
                     </TableCell>
+
                   );
                 })}
+                <TableCell className={classes.tableCell}>
+                  <IconButton
+                    aria-label="Edit"
+                    className={classes.tableActionButton}
+                  >
+                    <Edit
+                      className={
+                        classes.tableActionButtonIcon + " " + classes.edit
+                      }
+                    />
+                  </IconButton>
+                </TableCell>
               </TableRow>
             );
           })}

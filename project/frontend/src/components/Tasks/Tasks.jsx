@@ -43,56 +43,19 @@ class Tasks extends React.Component {
           {tasksIndexes.map(value => (
             <TableRow key={value} className={classes.tableRow}>
               <TableCell className={classes.tableCell}>
-                <Checkbox
-                  checked={this.state.checked.indexOf(value) !== -1}
-                  tabIndex={-1}
-                  onClick={this.handleToggle(value)}
-                  checkedIcon={<Check className={classes.checkedIcon} />}
-                  icon={<Check className={classes.uncheckedIcon} />}
-                  classes={{
-                    checked: classes.checked,
-                    root: classes.root
-                  }}
-                />
-              </TableCell>
-              <TableCell className={classes.tableCell}>
                 {tasks[value]}
               </TableCell>
               <TableCell className={classes.tableActions}>
-                <Tooltip
-                  id="tooltip-top"
-                  title="Edit Task"
-                  placement="top"
-                  classes={{ tooltip: classes.tooltip }}
+                <IconButton
+                  aria-label="Edit"
+                  className={classes.tableActionButton}
                 >
-                  <IconButton
-                    aria-label="Edit"
-                    className={classes.tableActionButton}
-                  >
-                    <Edit
-                      className={
-                        classes.tableActionButtonIcon + " " + classes.edit
-                      }
-                    />
-                  </IconButton>
-                </Tooltip>
-                <Tooltip
-                  id="tooltip-top-start"
-                  title="Remove"
-                  placement="top"
-                  classes={{ tooltip: classes.tooltip }}
-                >
-                  <IconButton
-                    aria-label="Close"
-                    className={classes.tableActionButton}
-                  >
-                    <Close
-                      className={
-                        classes.tableActionButtonIcon + " " + classes.close
-                      }
-                    />
-                  </IconButton>
-                </Tooltip>
+                  <Edit
+                    className={
+                      classes.tableActionButtonIcon + " " + classes.edit
+                    }
+                  />
+                </IconButton>
               </TableCell>
             </TableRow>
           ))}
